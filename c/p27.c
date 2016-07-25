@@ -35,6 +35,5 @@ int main() {
   printf("%ld %ld %ld\n", maxa, maxb, max);
   printf("Product of coeffs: %ld \n", maxa * maxb);
 
-
   return 0;
 }
