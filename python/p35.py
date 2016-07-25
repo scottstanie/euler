@@ -29,13 +29,15 @@ def rotations(num):
 
     return [int(a) for a in answer]
 
-circular_primes = 0
-primes = []
 
-for x in xrange(1000000):
-    if all(is_prime(r) for r in rotations(x)):
-        circular_primes += 1
-        primes.append(x)
+if __name__ == '__main__':
+    circular_primes = 0
+    primes = []
 
-print circular_primes
-print primes
+    for x in xrange(1000000):
+        if all(is_prime(r) for r in rotations(x)):
+            circular_primes += 1
+            primes.append(x)
+
+    print circular_primes
+    print primes
