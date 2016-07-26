@@ -7,7 +7,7 @@ prime_numbers = set()
 found_min_factorial = {}
 
 
-def factorize(n):
+def prime_factorize(n):
     if n in already_factored:
         return already_factored[n]
     if is_prime(n):
@@ -41,7 +41,7 @@ def find_min_factorial(n):
         if n in already_factored:
             factors = already_factored[n]
         else:
-            factors = factorize(n)
+            factors = prime_factorize(n)
             already_factored[n] = factors
 
         if n % 100 == 0:
@@ -55,7 +55,7 @@ def find_min_factorial(n):
                 # print 'min_factorial: ', min_factorial
                 # print 'factors needed:', factors_needed
                 # print 'current factors: ', current_factors
-            new_factors = factorize(min_factorial)
+            new_factors = prime_factorize(min_factorial)
             current_factors += Counter(new_factors)
 
         found_min_factorial[n] = min_factorial
@@ -73,11 +73,11 @@ if __name__ == '__main__':
         print "Usage: python p549.py <int>"
         sys.exit(1)
 
-    f = factorize(input_num)
+    f = prime_factorize(input_num)
     print f
 
     print find_min_factorial(input_num)
 
     for i in range(100000):
-        factorize(i)
+        prime_factorize(i)
     # print S(input_num)
