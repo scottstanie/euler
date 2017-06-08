@@ -15,4 +15,5 @@ def count_diags(square_size):
 
         yield diag
 
-print sum(count_diags(int(sys.argv[1])))
+if __name__ == '__main__':
+    print sum(count_diags(int(sys.argv[1])))
